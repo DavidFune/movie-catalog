@@ -4,7 +4,10 @@
   "description": "Api de catalagos de filmes",
   "main": "index.js",
   "scripts": {
-    "ts-node": "ts-node"
+    "ts-node": "ts-node",
+    "tsc": "tsc",
+    "clean:tsc": "rm tsconfig.tsbuildinfo"
+
   },
   "keywords": [],
   "author": "",
