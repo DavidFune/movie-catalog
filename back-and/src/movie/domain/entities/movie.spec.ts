@@ -1,5 +1,6 @@
 import { Movie } from "./movie";
 import { validate as uuidValidate } from "uuid";
+import UniqueEntityId from "../../../@seadwork/domain/unique-entity-id";
 describe('Movie Test', () => {
 
     test('Construvt of movie', () => {
@@ -22,7 +23,7 @@ describe('Movie Test', () => {
             director :"Hayao Miyazaki"})
 
             expect(movie.id).not.toBeNull()
-            expect(uuidValidate(movie.id)).toBeTruthy()
+            expect(movie.id).toBeInstanceOf(UniqueEntityId)
     });
 
 });

@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from "uuid";
+import UniqueEntityId from "../../../@seadwork/domain/unique-entity-id";
 export type MovieProps = {
     title: string,
     banner: string,
@@ -8,9 +8,9 @@ export type MovieProps = {
 }
 
 export class Movie {
-    public readonly id: string;
-    constructor(public readonly props: MovieProps, id?: string) {
-        this.id = id || uuidv4()
+    public readonly id: UniqueEntityId;
+    constructor(public readonly props: MovieProps, id?: UniqueEntityId) {
+        this.id = id || new UniqueEntityId()
         this.props.title = props.title
         this.props.banner = props.banner
         this.props.description = props.description
