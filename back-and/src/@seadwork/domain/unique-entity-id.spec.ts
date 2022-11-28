@@ -2,10 +2,6 @@ import InvalidUuidError from "../errors/invalid-uuid.error";
 import UniqueEntityId from "./unique-entity-id";
 import { v4 as uuidv4, validate as uuidValidate } from "uuid";
 
-function spyValidadeMethod() {
-  return jest.spyOn(UniqueEntityId.prototype as any, 'validade')
-}
-
 describe('UniqueEntityId Unit Tests', () => {
 
     const validateSpy = jest.spyOn(UniqueEntityId.prototype as any, "validate");
