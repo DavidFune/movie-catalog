@@ -1,4 +1,5 @@
-import UniqueEntityId from "../../../@seadwork/domain/unique-entity-id";
+import UniqueEntityId from "../../../@seadwork/domain/value-objects/unique-entity-id";
+
 export type MovieProps = {
     title: string,
     banner: string,

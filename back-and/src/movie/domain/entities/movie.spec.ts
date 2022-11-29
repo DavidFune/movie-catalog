@@ -1,6 +1,5 @@
 import { Movie } from "./movie";
-import { validate as uuidValidate } from "uuid";
-import UniqueEntityId from "../../../@seadwork/domain/unique-entity-id";
+import UniqueEntityId from "../../../@seadwork/domain/value-objects/unique-entity-id";
 describe('Movie Test', () => {
 
     test('Construvt of movie', () => {
@@ -14,7 +13,7 @@ describe('Movie Test', () => {
         expect(movie.props.title).toBe("Castle in the Sky")
     });
 
-    test('Validade Id', () => {
+    test('Validate Id', () => {
         const movie: Movie = new Movie({
             title :"Castle in the Sky", 
             banner :"banner.jpg", 
