@@ -22,7 +22,7 @@ describe('Movie Test', () => {
             director :"Hayao Miyazaki"})
 
             expect(movie.id).not.toBeNull()
-            expect(movie.id).toBeInstanceOf(UniqueEntityId)
+            expect(movie.uniqueEntityId).toBeInstanceOf(UniqueEntityId)
     });
 
 });

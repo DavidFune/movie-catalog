@@ -1,3 +1,4 @@
+import Entity from "../../../@seadwork/domain/entity/entity";
 import UniqueEntityId from "../../../@seadwork/domain/value-objects/unique-entity-id";
 
 export type MovieProps = {
@@ -8,10 +9,9 @@ export type MovieProps = {
     director: string
 }
 
-export class Movie {
-    public readonly id: UniqueEntityId;
+export class Movie extends Entity<MovieProps> {
     constructor(public readonly props: MovieProps, id?: UniqueEntityId) {
-        this.id = id || new UniqueEntityId()
+        super(props, id)
         this.props.title = props.title
         this.props.banner = props.banner
         this.props.description = props.description
