@@ -18,4 +18,17 @@ export class Movie extends Entity<MovieProps> {
         this.props.producer = props.producer
         this.props.director = props.director
     }
+    
+    update(
+        title: string,
+        banner: string,
+        description: string,
+        producer: string,
+        director: string): void{
+        this.props.title = title
+        this.props.banner = banner
+        this.props.description = description
+        this.props.producer = producer
+        this.props.director = director
+    }
 }
