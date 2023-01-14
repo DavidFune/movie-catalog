@@ -1,5 +1,6 @@
-import { Movie } from "./movie";
-import UniqueEntityId from "../../../@seadwork/domain/value-objects/unique-entity-id";
+
+import { Movie } from "../movie";
+import UniqueEntityId from "../../../../@seadwork/domain/value-objects/unique-entity-id";
 describe('Movie Test', () => {
 
     beforeEach( () => {
