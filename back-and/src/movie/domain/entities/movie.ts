@@ -1,6 +1,7 @@
 import Entity from "../../../@seadwork/domain/entity/entity";
 import UniqueEntityId from "../../../@seadwork/domain/value-objects/unique-entity-id";
 import ValidatorRules from "../../../@seadwork/validators/validator-rules";
+import MovieValidatorFactory, { MovieValidator } from "../validators/movie.validator";
 
 export type MovieProps = {
     title: string,
@@ -29,11 +30,11 @@ export class Movie extends Entity<MovieProps> {
         director: string): void {
 
         Movie.validate({
-           title,
-           banner,
-           description,
-           producer,
-           director
+            title,
+            banner,
+            description,
+            producer,
+            director
         })
 
         this.props.title = title
@@ -43,11 +44,8 @@ export class Movie extends Entity<MovieProps> {
         this.props.director = director
     }
 
-   static validate(props: MovieProps) {
-        ValidatorRules.values(props.title, 'title').required().string()
-        ValidatorRules.values(props.banner, 'banner').required().string()
-        ValidatorRules.values(props.description, 'description').required().string()
-        ValidatorRules.values(props.producer, 'producer').required().string()
-        ValidatorRules.values(props.director, 'director').required().string()
+    static validate(props: MovieProps) {
+        const validator: MovieValidator = MovieValidatorFactory.create()
+        validator.validate(props)
     }
 }
