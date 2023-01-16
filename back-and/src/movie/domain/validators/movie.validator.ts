@@ -2,7 +2,7 @@ import { IsNotEmpty, IsOptional, IsString, MaxLength } from "class-validator";
 import ClassValidatorFields from "../../../@seadwork/validators/class-validator-fileds";
 import { MovieProps } from "../entities/movie";
 
-export class MoveRules {
+export class MovieRules {
     @MaxLength(255)
     @IsString()
     @IsNotEmpty()
@@ -31,9 +31,9 @@ export class MoveRules {
 
 
 export class MovieValidator
-    extends ClassValidatorFields<MoveRules> {
+    extends ClassValidatorFields<MovieRules> {
     validate(data: MovieProps): boolean {
-        return super.validate(new MoveRules(data))
+        return super.validate(new MovieRules(data))
     }
 }
 
