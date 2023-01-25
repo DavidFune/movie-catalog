@@ -1,6 +1,5 @@
 import Entity from "../../../@seadwork/domain/entity/entity";
 import UniqueEntityId from "../../../@seadwork/domain/value-objects/unique-entity-id";
-import ValidatorRules from "../../../@seadwork/domain/validators/validator-rules";
 import MovieValidatorFactory, { MovieValidator } from "../validators/movie.validator";
 import { EntityValidationError } from "../../../@seadwork/domain/errors/validation-error";
 
