@@ -18,13 +18,23 @@ describe('Movie Integration Tests', () => {
             ...movieValues,
             title: null,
         })
-        ).toThrow(new ValidationError('The title is required'));
+        ).containsErrorMessages({
+            title: [
+                'title should not be empty',
+                'title must be a string',
+                'title must be shorter than or equal to 255 characters'
+            ]
+        });
 
         expect(() => new Movie({
             ...movieValues,
             title: 5 as any,
-        })
-        ).toThrow(new ValidationError('The title must be a string'));
+        })).containsErrorMessages({
+            title: [
+                'title must be a string',
+                'title must be shorter than or equal to 255 characters'
+            ]
+        });
     });
 
     it('should a invalid movie when update', () => {
@@ -38,7 +48,13 @@ describe('Movie Integration Tests', () => {
             movieValues.producer,
             movieValues.director
         )
-        ).toThrow(new ValidationError('The title is required'));
+        ).containsErrorMessages({
+            title: [
+                'title should not be empty',
+                'title must be a string',
+                'title must be shorter than or equal to 255 characters'
+            ]
+        });
 
         expect(() => movie.update(
             5 as any,
@@ -47,7 +63,12 @@ describe('Movie Integration Tests', () => {
             movieValues.producer,
             movieValues.director
         )
-        ).toThrow(new ValidationError('The title must be a string'));
+        ).containsErrorMessages({
+            title: [
+                'title must be a string',
+                'title must be shorter than or equal to 255 characters'
+            ]
+        });
     });
 
     it('should a valid movie created', () => {
