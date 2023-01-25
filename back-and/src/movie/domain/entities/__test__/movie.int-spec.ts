@@ -1,4 +1,3 @@
-import { ValidationError } from "../../../../@seadwork/errors/validation-error";
 import { Movie } from "../movie";
 
 describe('Movie Integration Tests', () => {

@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsOptional, IsString, MaxLength } from "class-validator";
-import ClassValidatorFields from "../../../@seadwork/validators/class-validator-fileds";
+import ClassValidatorFields from "../../../@seadwork/domain/validators/class-validator-fileds";
 import { MovieProps } from "../entities/movie";
 
 export class MovieRules {
