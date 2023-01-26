@@ -25,13 +25,13 @@ describe('InMemoryRepository Unit Test', () => {
 
     it('should throws error when entity not found', () => {
         expect(repository.findById('fake-id')).rejects.toThrow(
-            new NotFoundError('Entity Not Found using fake-id')
+            new NotFoundError('Entity Not Found using ID fake-id')
         );
 
         expect(repository.findById(
             new UniqueEntityId('8471cbf5-6356-44d5-9216-875d88433dff'))
             ).rejects.toThrow(
-            new NotFoundError('Entity Not Found using 8471cbf5-6356-44d5-9216-875d88433dff')
+            new NotFoundError('Entity Not Found using ID 8471cbf5-6356-44d5-9216-875d88433dff')
         );
 
     });
@@ -58,7 +58,7 @@ describe('InMemoryRepository Unit Test', () => {
         const entity = new StubEntity({title: 'title', description: 'teste entity - hello'})
         
         expect(repository.update(entity)).rejects.toThrow(
-            new NotFoundError(`Entity Not Found using ${entity.id}`)
+            new NotFoundError(`Entity Not Found using ID ${entity.id}`)
         );
 
     });
