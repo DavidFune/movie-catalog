@@ -8,7 +8,8 @@ export type MovieProps = {
     banner: string,
     description: string,
     producer: string,
-    director: string
+    director: string,
+    created_at?: Date
 }
 
 export class Movie extends Entity<MovieProps> {
@@ -20,6 +21,8 @@ export class Movie extends Entity<MovieProps> {
         this.props.description = props.description
         this.props.producer = props.producer
         this.props.director = props.director
+        this.props.created_at = this.props.created_at ?? new Date()
+
     }
 
     update(

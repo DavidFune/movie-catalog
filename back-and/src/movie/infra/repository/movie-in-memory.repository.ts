@@ -7,7 +7,7 @@ import MovieRepository from "../../domain/repository/movie.repository";
 export default class MovieInMemoryRepository
     extends InMemorySearchableRepository<Movie>
     implements MovieRepository.Repository {
-    sortableFields: string[] = ["name", "created_at"];
+    sortableFields: string[] = ["title", "created_at"];
 
     protected async applyFilter(
         items: Movie[], 
@@ -23,15 +23,14 @@ export default class MovieInMemoryRepository
         });
     }
 
-    protected applysort(
+    protected applySort(
         items: Movie[],
         sort: string | null,
         sort_dir: SortDirection | null
     ): Promise<Movie[]>{
         return !sort?
         super.applySort(items, "created_at", "desc")
-        : super.applySort(items, sort, sort_dir)
-        
+        : super.applySort(items, sort, sort_dir)  
     }
 
 }
