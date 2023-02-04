@@ -54,4 +54,41 @@ export class Movie extends Entity<MovieProps> {
             throw new EntityValidationError(validator.errors); 
         }
     }
+    
+    get title() {
+        return this.props.title
+    }
+    private set title(value){
+        this.props.title = value
+    }
+    get banner() {
+        return this.props.banner
+    }
+    private set banner(value){
+        this.props.banner = value
+    }
+    get description() {
+        return this.props.description
+    }
+    private set description(value: string){
+        this.props.description = value
+    }
+    get producer() {
+        return this.props.producer
+    }
+    private set producer(value){
+        this.props.producer = value
+    }
+    get director() {
+        return this.props.director
+    }
+    private set director(value){
+        this.props.director = value
+    }
+    get created_at () {
+        return this.props.created_at
+    }
+    private set created_at(value){
+        this.props.created_at = value
+    }
 }

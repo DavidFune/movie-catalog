@@ -14,7 +14,7 @@ describe('Movie Test', () => {
         producer :"Isao Takahata", 
         director :"Hayao Miyazaki"})
         expect(Movie.validate).toHaveBeenCalled();
-        expect(movie.props.title).toBe("Castle in the Sky")
+        expect(movie.title).toBe("Castle in the Sky")
     });
 
     test('Validate Id', () => {
@@ -47,11 +47,11 @@ describe('Movie Test', () => {
 
         expect(Movie.validate).toHaveBeenCalledTimes(2);
         
-        expect(movie.props.title).toBe("test update");
-        expect(movie.props.banner).toBe("test update");
-        expect(movie.props.description).toBe("test update");
-        expect(movie.props.producer).toBe("test update");
-        expect(movie.props.director).toBe("test update");
+        expect(movie.title).toBe("test update");
+        expect(movie.banner).toBe("test update");
+        expect(movie.description).toBe("test update");
+        expect(movie.producer).toBe("test update");
+        expect(movie.director).toBe("test update");
       });
 
 });

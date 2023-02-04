@@ -1,0 +1,5 @@
+export * from './create-movie.use-case'
+export * from './delete-movie.use-case'
+export * from './update-movie.use-case'
+export * from './get-movie.use-case'
+export * from './list-movies.use-case'
