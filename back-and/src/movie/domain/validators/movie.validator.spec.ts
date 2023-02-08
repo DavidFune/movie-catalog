@@ -1,4 +1,3 @@
-import { title } from "process";
 import MovieValidatorFactory, { MovieRules, MovieValidator } from "./movie.validator";
 
 describe('MovieValidator Tests', () => {
